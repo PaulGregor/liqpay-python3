@@ -1,12 +1,12 @@
 """
 LiqPay Python3 SDK
 ~~~~~~~~~~~~~~~~~
-supports python 3.4.x, 3.5.x version
+supports python 3.4.x, 3.5.x, 3.6.x, 3.7.x version
 requires requests module
 """
 
 __title__ = 'LiqPay Python3 SDK'
-__version__ = '1.1.1'
+__version__ = '1.1.2'
 
 import base64
 from copy import deepcopy
@@ -42,7 +42,7 @@ class LiqPay(object):
     FORM_TEMPLATE = u'''\
 <form method="post" action="{action}" accept-charset="utf-8">
 \t{param_inputs}
-    <input type="image" src="//static.liqpay.com/buttons/p1{language}.radius.png" name="btn_text" />
+    <input type="image" src="//static.liqpay.ua/buttons/p1{language}.radius.png" name="btn_text" />
 </form>'''
     INPUT_TEMPLATE = u'<input type="hidden" name="{name}" value="{value}"/>'
 
@@ -51,7 +51,7 @@ class LiqPay(object):
         'result_url', 'server_url', 'type', 'signature', 'language', 'sandbox'
     ]
 
-    def __init__(self, public_key, private_key, host='https://www.liqpay.com/api/'):
+    def __init__(self, public_key, private_key, host='https://www.liqpay.ua/api/'):
         self._public_key = public_key
         self._private_key = private_key
         self._host = host
